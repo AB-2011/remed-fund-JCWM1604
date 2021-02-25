@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huruf Vokal</title>
+</head>
+
+<body>
+    <h1>
+        Masukkan Kata:
+    </h1><br><br>
+    <input type="text" id="kata"><br><br>
+    <button onclick="show()">HITUNG VOKAL</button>
+    <button onclick="show2()">HURUF VOKAL</button>
+    <button onclick="show3()">TANPA VOKAL</button>
+    <br><br>
+    <div id="hasil">
+
+    </div>
+
+</body>
+
+<script>
+    function countvowel(kata = '') {
+        var kata = kata.toLowerCase().replace(/\s/g, '').split('')
+        // console.log(kata)
+
+        var result = ''
+
+        for (var i = 0; i < kata.length; i++) {
+            if (kata[i] == 'a' || kata[i] == 'i' || kata[i] == 'u' || kata[i] == 'e' || kata[i] == 'o') {
+                if (!result.includes(kata[i])) {
+                    result += kata[i]
+                    // console.log(result)
+                }
+            }
+        }
+
+        return result.length
+    }
+
+    function hurufVokal(kata = '') {
+        var result = ''
+
+        for (var i = 0; i < kata.length; i++) {
+            if (kata[i] == 'a' || kata[i] == 'i' || kata[i] == 'u' || kata[i] == 'e' || kata[i] == 'o') {
+                if (!result.includes(kata[i])) {
+                    result += kata[i]
+                }
+            }
+        }
+
+        return result.split('').sort()
+    }
+
+    function tanpaVokal(kata = '') {
+        var kata = kata.toLowerCase().replace(/\s/g, '').split('')
+        // console.log(kata)
+
+        var result = ''
+        var result2 = ''
+
+        for (var i = 0; i < kata.length; i++) {
+            if (kata[i] == 'a' || kata[i] == 'i' || kata[i] == 'u' || kata[i] == 'e' || kata[i] == 'o') {
+                if (!result.includes(kata[i])) {
+                    result += kata[i]
+                    // console.log(result)
+                }
+            } else {
+                result2 += kata[i]
+            }
+        }
+
+        return result2
+    }
+
+
+    function show() {
+        var kata = document.getElementById('kata').value
+        var result
+        if (kata) {
+            result = countvowel(kata)
+            document.getElementById('hasil').innerHTML = `ada ${result} huruf vokal berdampingan`
+        } else {
+            alert('input tidak boleh kosong')
+        }
+    }
+
+    function show2() {
+        var kata = document.getElementById('kata').value
+        var result
+        if (kata) {
+            result = hurufVokal(kata)
+            document.getElementById('hasil').innerHTML = `huruf vokal: ${result}`
+
+        } else {
+            alert('input tidak boleh kosong')
+
+        }
+    }
+
+    function show3() {
+        var kata = document.getElementById('kata').value
+        var result
+        if (kata) {
+            result = tanpaVokal(kata)
+            document.getElementById('hasil').innerHTML = `Tanpa vokal: ${result}`
+
+        } else {
+            alert('input tidak boleh kosong')
+
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Product</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="renderData">
+
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td><input type="text" placeholder="masukkan nama barang" id="inputProduk"></td>
+                <td><input type="text" placeholder="masukkan harga barang" id="inputHarga"></td>
+                <td>
+                    <input type="radio" name="category"> food
+                    <input type="radio" name="category"> drink
+                    <input type="radio" name="category"> others
+                </td>
+                <td>
+                    <button onclick="addData()">ADD</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+<script src="soal2.js"></script>
+
+</html>
